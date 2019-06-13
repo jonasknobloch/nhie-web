@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+}
+
+.ph-placeholder {
+    height: 50%;
+}
+
+.ph-placeholder__wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ph-placeholder__bubble {
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.ph-placeholder__bubble--1 {
+    animation-delay: 0.25s;
+}
+
+.ph-placeholder__bubble--2 {
+    animation-delay: 0.5s;
+}
+
+.ph-placeholder__bubble--3 {
+    animation-delay: 0.75s;
+}
