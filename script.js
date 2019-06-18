@@ -5,7 +5,7 @@ const STATEMENT = document.querySelector("#js-ph-statement");
 
 function refreshStatement() {
     axios
-        .get(API_ENDPOINT)
+        .get(API_ENDPOINT, { crossdomain: true })
         .then(function (response) {
             if ("statement" in response.data) {
                 STATEMENT.innerHTML = response.data.statement;
