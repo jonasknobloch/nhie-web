@@ -23,7 +23,9 @@ function refreshStatement() {
         });
 }
 
-document.addEventListener("click", refreshStatement);
-document.addEventListener("keydown", refreshStatement);
+document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("click", refreshStatement);
+    document.addEventListener("keydown", refreshStatement);
 
-refreshStatement();
+    refreshStatement();
+});
