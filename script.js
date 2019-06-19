@@ -1,4 +1,4 @@
-const API_ENDPOINT = "http://api.neverhaveiever.io/v1/statement";
+const API_ENDPOINT = "https://api.neverhaveiever.io/v1/statement";
 
 const PLACEHOLDER = document.querySelector("#js-ph-placeholder");
 const STATEMENT = document.querySelector("#js-ph-statement");
