@@ -1,0 +1,11 @@
+{
+  "name": "placeholder",
+  "version": "1.0.0",
+  "repository": "https://github.com/neverhaveiever-io/neverhaveiever-io.github.io",
+  "author": "Jonas Knobloch <***REMOVED***>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0"
+  }
+}
