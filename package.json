@@ -6,6 +6,9 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^6.0.1",
-    "eslint-config-google": "^0.13.0"
+    "eslint-config-google": "^0.13.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-order": "^3.0.0"
   }
 }
