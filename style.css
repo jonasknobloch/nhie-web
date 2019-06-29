@@ -22,6 +22,8 @@ body {
 
     margin: 16px;
 
+    user-select: none;
+
     transition: font-size 2s, color 2s;
     text-align: center;
 
