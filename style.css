@@ -1,5 +1,8 @@
 body {
     margin: 0;
+
+    /* required for iOS devices */
+    cursor: pointer;
 }
 
 .ph-page__wrapper {
