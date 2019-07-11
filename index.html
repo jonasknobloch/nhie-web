@@ -13,16 +13,70 @@
 </head>
 <body>
 <div class="ph-page__wrapper">
-    <svg id="js-ph-placeholder" class="ph-placeholder" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 512 512">
-        <path fill="#cc3535" stroke="#000" stroke-width="28.17" d="M255.995 481.595V370.658v110.937zM304.722 481.596h-97.444 97.444z"/>
-        <path fill="#cc3535" d="M255.999 370.659L369.92 206.464H142.078l113.921 164.195z"/>
-        <path d="M264.444 381.932l-1.913 1.205-2.079.884-2.196.54-2.257.181-2.25-.181-2.196-.54-2.085-.884-1.907-1.205-1.699-1.497-1.429-1.747-113.926-164.196-1.176-2.041-.819-2.209-.441-2.315-.048-2.355.346-2.33.729-2.241 1.092-2.087 1.425-1.877 1.718-1.612 1.963-1.303 2.152-.958 2.282-.586 2.348-.197H369.92l2.349.197 2.282.586 2.152.958 1.963 1.303 1.717 1.612 1.429 1.877 1.091 2.087.73 2.241.344 2.33-.05 2.355-.435 2.315-.822 2.209-1.177 2.041-113.921 164.196-1.435 1.747-1.693 1.497zm-95.455-161.385l87.01 125.408 87.011-125.408H168.989z"/>
-        <g fill="#e26a6a" stroke="#000" stroke-width="14.08">
-            <circle class="ph-placeholder__bubble ph-placeholder__bubble--1" cx="183.717" cy="149.497" r="11.127"/>
-            <circle class="ph-placeholder__bubble ph-placeholder__bubble--2" cx="265.236" cy="119.507" r="18.864"/>
-            <circle class="ph-placeholder__bubble ph-placeholder__bubble--3" cx="202.603" cy="60.422" r="30.018"/>
-        </g>
-    </svg>
+    <div id="js-ph-category-selection" class="ph-category-selection">
+        <span>
+            <input id="js-ph-toggle-harmless" class="ph-category-selection__toggle" type="checkbox" checked>
+            <div class="ph-category-selection__toggle-wrapper" >
+            <label class="ph-category-selection__toggle-label" for="js-ph-toggle-harmless">
+                <svg class="ph-category-selection__toggle-icon" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 350 480">
+                    <path fill="none" d="M0 0h350v480H0z"/>
+                    <g stroke="#000" stroke-width="28">
+                        <circle class="ph-animation-mojito__lime" cx="245.673" cy="198.489" r="70.692" fill="#d9d9d9"/>
+                        <path class="ph-animation-mojito__glass" fill="#cdcdcd" d="M266.748 187.142H83.216l27.307 277.32h128.919l27.306-277.32z"/>
+                        <path fill="#95dd9b" stroke-linecap="square"
+                              d="M95.541 115.111l72.573 340.826-72.573-340.826z"/>
+                    </g>
+                </svg>
+            </label>
+            <span class="ph-category-selection__toggle-description">harmless</span>
+        </div>
+        </span>
+        <span>
+            <input id="js-ph-toggle-delicate" class="ph-category-selection__toggle" type="checkbox">
+            <div class="ph-category-selection__toggle-wrapper">
+            <label class="ph-category-selection__toggle-label" for="js-ph-toggle-delicate">
+                <svg class="ph-category-selection__toggle-icon" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 350 480">
+                    <path fill="none" d="M0 0h350v480H0z"/>
+                    <g stroke="#000" stroke-width="28.03">
+                        <path fill="none" d="M274.678 268.605h59.439v129.744h-59.439z"/>
+                        <path class="ph-animation-beer__glass" fill="#bbbbbb" d="M75.286 228.593h199.393v235.869H75.286z"/>
+                        <g fill="#fff">
+                            <path d="M124.008 398.349V280.785v117.564zM225.957 398.349V280.785v117.564zM175.523 398.349V280.785v117.564z"/>
+                        </g>
+                        <path fill="#fff"
+                              d="M96.128 160.897c-22.935-68.929 68.049-100.768 100.844-36.393 23.726-26.341 78.148-18.887 72.299 26.963 54.861.322 56.49 72.188 5.407 77.126H75.286c-49.276-5.265-38.666-91.756 20.842-67.696z"/>
+                    </g>
+                </svg>
+            </label>
+            <span class="ph-category-selection__toggle-description">delicate</span>
+        </div>
+        </span>
+        <span>
+            <input  id="js-ph-toggle-offensive" class="ph-category-selection__toggle" type="checkbox">
+            <div class="ph-category-selection__toggle-wrapper">
+            <label class="ph-category-selection__toggle-label" for="js-ph-toggle-offensive">
+                <svg class="ph-category-selection__toggle-icon" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 350 480">
+                    <path fill="none" d="M0 0h350v480H0z"/>
+                    <g class="ph-animation-wine" fill="#6f6f6f" stroke="#000">
+                        <path stroke-width="28" d="M174.982 354.081l112.792-162.566H62.19l112.792 162.566z"/>
+                        <path stroke-width="28.03"
+                              d="M174.978 464.461V354.082v110.379zM223.46 464.462h-96.955 96.955z"/>
+                        <circle class="ph-animation-wine__bubble ph-animation-wine__bubble--1" cx="103.063" cy="134.033" r="11.071" stroke-width="14.01"/>
+                        <circle class="ph-animation-wine__bubble ph-animation-wine__bubble--2" cx="184.173" cy="104.193" r="18.769" stroke-width="14.01"/>
+                        <circle class="ph-animation-wine__bubble ph-animation-wine__bubble--3" cx="121.854" cy="45.405" r="29.867" stroke-width="14.01"/>
+                    </g>
+                </svg>
+            </label>
+            <span class="ph-category-selection__toggle-description">offensive</span>
+        </div>
+        </span>
+    </div>
     <p id="js-ph-statement" class="ph-statement ph-statement--animated">...</p>
 </div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

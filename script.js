@@ -1,7 +1,11 @@
-const API_ENDPOINT = 'https://api.neverhaveiever.io/v1/statement';
+const API_ENDPOINT = 'https://api.neverhaveiever.io/v1/statements/random';
 
-const PLACEHOLDER = document.querySelector('#js-ph-placeholder');
 const STATEMENT = document.querySelector('#js-ph-statement');
+const LEVEL_SELECTION = document.querySelector('#js-ph-category-selection');
+
+const TOGGLE_HARMLESS = document.querySelector('#js-ph-toggle-harmless');
+const TOGGLE_DELICATE = document.querySelector('#js-ph-toggle-delicate');
+const TOGGLE_OFFENSIVE = document.querySelector('#js-ph-toggle-offensive');
 
 let blockRefresh = false;
 
@@ -14,7 +18,12 @@ function refreshStatement() {
   }
 
   axios
-      .get(API_ENDPOINT, {crossdomain: true})
+      .get(API_ENDPOINT, {
+        crossdomain: true,
+        params: {
+          category: retrieveCategories(),
+        },
+      })
       .then(function(response) {
         if ('statement' in response.data) {
           STATEMENT.innerHTML = response.data.statement;
@@ -27,7 +36,6 @@ function refreshStatement() {
         STATEMENT.innerHTML = 'Seems like the API is dead.';
       })
       .finally(function() {
-        PLACEHOLDER.classList.add('ph-placeholder--small');
         STATEMENT.classList.remove('ph-statement--animated');
       });
 }
@@ -35,6 +43,23 @@ function refreshStatement() {
 document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', refreshStatement);
   document.addEventListener('keydown', refreshStatement);
+
+  LEVEL_SELECTION.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+
+  [TOGGLE_HARMLESS, TOGGLE_DELICATE, TOGGLE_OFFENSIVE]
+      .forEach(function(toggle) {
+        toggle.addEventListener('change', function() {
+          if (!TOGGLE_HARMLESS.checked &&
+              !TOGGLE_DELICATE.checked &&
+              !TOGGLE_OFFENSIVE.checked) {
+            TOGGLE_HARMLESS.checked = true;
+            TOGGLE_DELICATE.checked = true;
+            TOGGLE_OFFENSIVE.checked = true;
+          }
+        });
+      });
 
   window.addEventListener('offline', function() {
     blockRefresh = true;
@@ -48,3 +73,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   refreshStatement();
 });
+
+/**
+ * Retrieves categories.
+ *
+ * @return {Array}
+ */
+function retrieveCategories() {
+  const categories = [];
+
+  if (TOGGLE_HARMLESS.checked) {
+    categories.push('harmless');
+  }
+
+  if (TOGGLE_DELICATE.checked) {
+    categories.push('delicate');
+  }
+
+  if (TOGGLE_OFFENSIVE.checked) {
+    categories.push('offensive');
+  }
+
+  return categories;
+}

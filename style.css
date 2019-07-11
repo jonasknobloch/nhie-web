@@ -39,17 +39,59 @@ body {
     backface-visibility: visible;
 }
 
-.ph-placeholder {
-    height: 30%;
+.ph-category-selection {
+    display: flex;
+    flex-direction: row;
 
-    transition: height 2s;
+    margin: 16px;
 }
 
-.ph-placeholder--small {
-    height: 20%;
+.ph-category-selection__toggle-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    margin: 0 8px;
+
+    cursor: pointer;
 }
 
-.ph-placeholder__bubble {
+.ph-category-selection__toggle {
+    display: none;
+}
+
+.ph-category-selection__toggle-label {
+    display: flex;
+    flex-direction: column;
+
+    cursor: pointer;
+}
+
+.ph-category-selection__toggle-label > * {
+    pointer-events: none;
+}
+
+.ph-category-selection__toggle-description {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 4px 0;
+
+    user-select: none;
+
+    color: #9e9e9e; /* #9e9e9e -> #616161 */
+}
+
+.ph-category-selection__toggle-icon {
+    height: 16vw;
+    max-height: 72px;
+}
+
+.ph-animation-wine__bubble {
     animation-name: pulse;
     animation-fill-mode: both;
 
@@ -57,16 +99,47 @@ body {
     animation-iteration-count: infinite;
 }
 
-.ph-placeholder__bubble--1 {
+.ph-animation-wine__bubble--1 {
     animation-delay: 0.25s;
 }
 
-.ph-placeholder__bubble--2 {
+.ph-animation-wine__bubble--2 {
     animation-delay: 0.5s;
 }
 
-.ph-placeholder__bubble--3 {
+.ph-animation-wine__bubble--3 {
     animation-delay: 0.75s;
+}
+
+/*
+
+mojito__lime:  #94f20d -> #d9d9d9
+mojito__glass: #95dd9b -> #cdcdcd
+
+beer__glass:   #f2af0d -> #bbbbbb
+
+wine:          #cc3535 -> #6f6f6f
+
+*/
+
+.ph-category-selection__toggle[type=checkbox]:checked ~ .ph-category-selection__toggle-wrapper .ph-animation-mojito__lime {
+    fill: #94f20d;
+}
+
+.ph-category-selection__toggle[type=checkbox]:checked ~ .ph-category-selection__toggle-wrapper .ph-animation-mojito__glass {
+    fill: #95dd9b;
+}
+
+.ph-category-selection__toggle[type=checkbox]:checked ~ .ph-category-selection__toggle-wrapper .ph-animation-beer__glass {
+    fill: #f2af0d;
+}
+
+.ph-category-selection__toggle[type=checkbox]:checked ~ .ph-category-selection__toggle-wrapper .ph-animation-wine {
+    fill: #cc3535;
+}
+
+.ph-category-selection__toggle[type=checkbox]:checked ~ .ph-category-selection__toggle-wrapper .ph-category-selection__toggle-description {
+    color: #616161;
 }
 
 @keyframes pulse {
@@ -90,20 +163,17 @@ body {
     }
 
     40% {
-        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
-        rotate3d(0, 1, 0, -190deg);
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
         animation-timing-function: ease-out;
     }
 
     50% {
-        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
-        rotate3d(0, 1, 0, -170deg);
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
         animation-timing-function: ease-in;
     }
 
     80% {
-        transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
-        rotate3d(0, 1, 0, 0deg);
+        transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
         animation-timing-function: ease-in;
     }
 
