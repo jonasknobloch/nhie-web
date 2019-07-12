@@ -3,6 +3,9 @@ body {
 
     /* required for iOS devices */
     cursor: pointer;
+
+    /* prevents blue flicker on click */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .ph-page__wrapper {
