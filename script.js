@@ -8,6 +8,7 @@ const TOGGLE_DELICATE = document.querySelector('#js-ph-toggle-delicate');
 const TOGGLE_OFFENSIVE = document.querySelector('#js-ph-toggle-offensive');
 
 let blockRefresh = false;
+let statementHistory = [];
 
 /**
  * Fetches a new statement.
@@ -25,8 +26,17 @@ function refreshStatement() {
         },
       })
       .then(function(response) {
-        if ('statement' in response.data) {
+        if ('statement' in response.data && 'ID' in response.data) {
+          if (statementHistory.indexOf(response.data.ID) !== -1) {
+            refreshStatement();
+          }
+
           STATEMENT.innerHTML = response.data.statement;
+          statementHistory.push(response.data.ID);
+
+          if (statementHistory.length > 50) {
+            statementHistory = [];
+          }
         } else {
           STATEMENT.innerHTML = 'Retarded API response.';
         }
