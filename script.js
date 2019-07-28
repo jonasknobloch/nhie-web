@@ -45,9 +45,6 @@ function refreshStatement() {
       .catch(function(error) {
         console.log(error);
         STATEMENT.innerHTML = 'Seems like the API is dead.';
-      })
-      .finally(function() {
-        STATEMENT.classList.remove('ph-statement--animated');
       });
 }
 
