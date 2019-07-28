@@ -78,8 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
     blockRefresh = false;
     STATEMENT.innerHTML = 'Welcome back! Tap to continue.';
   });
-
-  refreshStatement();
 });
 
 /**
