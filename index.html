@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142379361-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142379361-1');
+    </script>
     <meta charset="UTF-8">
     <title>Never Have I Ever</title>
     <meta name="description" content="Bringing the infamous drinking game to the web.">
@@ -10,6 +19,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 </head>
 <body>
 <div class="ph-page__wrapper">
@@ -80,6 +90,21 @@
     <p id="js-ph-statement" class="ph-statement">Tap to start playing.</p>
 </div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+    window.cookieconsent.initialise({
+        palette: {
+            popup: {
+                background: "#237afc"
+            },
+        },
+        onPopupOpen: function() {
+            document.querySelector('div[role=dialog]').addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        }
+    });
+</script>
 <script src="script.js"></script>
 </body>
 </html>
