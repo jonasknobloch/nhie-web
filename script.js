@@ -51,8 +51,9 @@ function refreshStatement() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  document.addEventListener('keydown', refreshStatement);
   PAGE_WRAPPER.addEventListener('click', refreshStatement);
-  PAGE_WRAPPER.addEventListener('keydown', refreshStatement);
 
   LEVEL_SELECTION.addEventListener('click', function(event) {
     event.stopPropagation();
