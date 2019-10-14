@@ -1,5 +1,7 @@
 const API_ENDPOINT = 'https://api.neverhaveiever.io/v1/statements/random';
 
+const PAGE_WRAPPER = document.querySelector('#js-ph-page-wrapper');
+
 const STATEMENT = document.querySelector('#js-ph-statement');
 const LEVEL_SELECTION = document.querySelector('#js-ph-category-selection');
 
@@ -49,8 +51,8 @@ function refreshStatement() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.addEventListener('click', refreshStatement);
-  document.addEventListener('keydown', refreshStatement);
+  PAGE_WRAPPER.addEventListener('click', refreshStatement);
+  PAGE_WRAPPER.addEventListener('keydown', refreshStatement);
 
   LEVEL_SELECTION.addEventListener('click', function(event) {
     event.stopPropagation();

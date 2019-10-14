@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 </head>
 <body>
-<div class="ph-page__wrapper">
+<div id="js-ph-page-wrapper" class="ph-page__wrapper">
     <div id="js-ph-category-selection" class="ph-category-selection">
         <span>
             <input id="js-ph-toggle-harmless" class="ph-category-selection__toggle" type="checkbox" checked>
@@ -95,14 +95,14 @@
     window.cookieconsent.initialise({
         palette: {
             popup: {
-                background: "#237afc"
+                background: "#000"
             },
+            button: {
+                background: "#f2af0d"
+            }
         },
-        onPopupOpen: function() {
-            document.querySelector('div[role=dialog]').addEventListener('click', function(event) {
-                event.stopPropagation();
-            });
-        }
+        position: 'top',
+        static: true,
     });
 </script>
 <script src="script.js"></script>
