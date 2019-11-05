@@ -9,10 +9,7 @@ const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
   mode: env,
-  entry: {
-    main: path.resolve(__dirname, 'src/main.js'),
-    cookie: path.resolve(__dirname, 'src/cookie.js'),
-  },
+  entry: path.resolve(__dirname, 'src/main.js'),
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
