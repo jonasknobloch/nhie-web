@@ -2,7 +2,7 @@ import '../style.css';
 
 const axios = require('axios').default;
 
-const API_ENDPOINT = 'https://api.neverhaveiever.io/v1/statements/random';
+const API_ENDPOINT = 'https://api.nhie.io/v1/statements/random';
 
 const PAGE_WRAPPER = document.querySelector('#js-ph-page-wrapper');
 
