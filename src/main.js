@@ -14,6 +14,7 @@ const TOGGLE_DELICATE = document.querySelector('#js-ph-toggle-delicate');
 const TOGGLE_OFFENSIVE = document.querySelector('#js-ph-toggle-offensive');
 
 const STATEMENT_HISTORY = [];
+const STATEMENT_HISTORY_LIMIT = 150;
 
 let blockRefresh = false;
 
@@ -41,7 +42,7 @@ function refreshStatement() {
           STATEMENT.innerHTML = response.data.statement;
           STATEMENT_HISTORY.push(response.data.ID);
 
-          if (STATEMENT_HISTORY.length > 50) {
+          if (STATEMENT_HISTORY.length > STATEMENT_HISTORY_LIMIT) {
             STATEMENT_HISTORY.shift();
           }
         } else {
