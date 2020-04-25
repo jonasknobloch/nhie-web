@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/neverhaveiever-io/neverhaveiever-io.github.io.svg?branch=master)](https://travis-ci.org/neverhaveiever-io/neverhaveiever-io.github.io)
+[![Build Status](https://travis-ci.com/neverhaveiever-io/web.svg?branch=master)](https://travis-ci.com/neverhaveiever-io/web)
 
 # neverhaveiever.io
 
