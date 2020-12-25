@@ -1,0 +1,106 @@
+@use "~@material/theme" with (
+  $primary: black,
+  $secondary: #424242,
+  $on-primary: white,
+  $on-secondary: #eeeeee,
+);
+
+@use "~@material/typography" with (
+  $font-family: unquote("Lato, sans-serif"),
+  $styles-button: (
+    font-weight: 700,
+  ),
+);
+
+@use "~@material/button/mdc-button";
+@use "~@material/dialog/mdc-dialog";
+@use "~@material/form-field/mdc-form-field";
+@use "~@material/icon-button/mdc-icon-button";
+@use "~@material/layout-grid/mdc-layout-grid";
+@use "~@material/linear-progress/mdc-linear-progress";
+@use "~@material/radio/styles" as mdc-radio;
+@use "~@material/ripple/styles" as mdc-ripple;
+@use "~@material/top-app-bar/mdc-top-app-bar";
+
+@use "~@material/top-app-bar";
+@use "~@material/linear-progress";
+
+html {
+  height: 100%;
+}
+
+.body {
+  /* required for iOS devices */
+  cursor: pointer;
+
+  /* prevents blue flicker on click */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nhie-top-app-bar {
+  @include top-app-bar.ink-color(black);
+  @include top-app-bar.icon-ink-color(black);
+  @include top-app-bar.fill-color(white);
+
+  position: relative;
+
+  &__brand {
+    width: 32px;
+    height: 32px;
+    margin-left: 12px;
+
+    border-radius: 8px;
+
+    background-image: url("./assets/brand.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__title {
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+  }
+}
+
+.nhie-linear-progress {
+  @include linear-progress.bar-color(black);
+  @include linear-progress.buffer-color(#e0e0e0);
+}
+
+.nhie-layout {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+
+    cursor: pointer;
+  }
+}
+
+.nhie-footer {
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+
+  height: 56px;
+
+  &__element  {
+    margin: 8px;
+
+    user-select: none;
+    text-decoration: none;
+
+    color: black;
+  }
+}

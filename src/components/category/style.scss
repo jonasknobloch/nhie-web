@@ -1,0 +1,42 @@
+.nhie-category {
+  display: none;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 8px;
+
+    cursor: pointer;
+  }
+
+  &__icon {
+    width: 56px;
+    height: 72px;
+
+    user-select: none;
+  }
+
+  &[type=checkbox]:not(:checked) ~ &__icon {
+    filter: grayscale(100%);
+  }
+
+  &__description {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 8px;
+
+    user-select: none;
+  }
+
+  &[type=checkbox]:not(:checked) ~ &__description {
+    color: #424242;
+  }
+}

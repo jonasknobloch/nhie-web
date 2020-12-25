@@ -1,0 +1,56 @@
+<div class="mdc-dialog nhie-language-dialog">
+    <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+             role="alertdialog"
+             aria-modal="true"
+             aria-labelledby="my-dialog-title"
+             aria-describedby="my-dialog-content">
+            <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+            <h2 class="mdc-dialog__title" id="my-dialog-title">Change Language</h2>
+            <div class="mdc-dialog__content">
+                <div class="nhie-dialog-list-container">
+                    <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                            <input class="mdc-radio__native-control"
+                                   type="radio"
+                                   id="lang-en-radio"
+                                   name="language"
+                                   value="en"
+                                   checked>
+                            <div class="mdc-radio__background">
+                                <div class="mdc-radio__outer-circle"></div>
+                                <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                        </div>
+                        <label for="lang-en-radio">English (English)</label>
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                            <input class="mdc-radio__native-control"
+                                   type="radio"
+                                   id="lang-de-radio"
+                                   name="language"
+                                   value="de">
+                            <div class="mdc-radio__background">
+                                <div class="mdc-radio__outer-circle"></div>
+                                <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                        </div>
+                        <label for="lang-de-radio">German (Deutsch)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-dialog__actions">
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Cancel</span>
+                </button>
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">OK</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+</div>
