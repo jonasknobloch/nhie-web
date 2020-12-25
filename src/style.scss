@@ -29,14 +29,6 @@ html {
   height: 100%;
 }
 
-.body {
-  /* required for iOS devices */
-  cursor: pointer;
-
-  /* prevents blue flicker on click */
-  -webkit-tap-highlight-color: transparent;
-}
-
 .nhie-top-app-bar {
   @include top-app-bar.ink-color(black);
   @include top-app-bar.icon-ink-color(black);
@@ -73,7 +65,6 @@ html {
 
   height: 100%;
 
-
   &__content {
     display: flex;
     align-items: center;
@@ -81,6 +72,9 @@ html {
     justify-content: center;
 
     cursor: pointer;
+
+    /* prevents blue flicker on tap */
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
